@@ -47,6 +47,7 @@ dependencies:
 
   # Other
   uuid:
+  gap:
 
 dev_dependencies:
   flutter_test:
@@ -58,8 +59,14 @@ dev_dependencies:
   # Code generator
   build_runner:
   freezed: ^2.3.5
-  flutter_gen_runner:
   retrofit_generator:
 
   # Other
   flutter_launcher_icons:
+
+flutter:
+  assets:
+    - assets/images/
+    - assets/svgs/
+
+  uses-material-design: true

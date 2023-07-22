@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// FIXME: 後で整備する
 class AppColorTheme {
   const AppColorTheme({
     required this.mainColor,
@@ -18,7 +19,7 @@ class AppColorTheme {
   final Color gray400;
 
   factory AppColorTheme.dark() => AppColorTheme(
-        mainColor: Color(0xFFB800),
+        mainColor: Color(0xffffb700),
         accentColor: Color(0x27A2BB),
         gray100: Color(0x404040),
         gray200: Color(0x616161),
