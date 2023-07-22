@@ -21,26 +21,31 @@ class HomePage extends StatelessWidget {
         padding: EdgeInsets.symmetric(
           vertical: 8,
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            UserIconList(),
-            Gap(16),
-            Expanded(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8),
-                child: GridView.builder(
-                  itemBuilder: (context, index) {
+        child: CustomScrollView(
+          slivers: [
+            SliverList(
+              delegate: SliverChildListDelegate(
+                [
+                  UserIconList(),
+                  SizedBox(height: 16),
+                ],
+              ),
+            ),
+            SliverPadding(
+              padding: EdgeInsets.symmetric(horizontal: 8),
+              sliver: SliverGrid(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 8,
+                  crossAxisCount: 2,
+                  // NOTE: childAspectRatio = 要素のWidth / 要素のHeight
+                  childAspectRatio: 178 / 286,
+                ),
+                delegate: SliverChildBuilderDelegate(
+                  (BuildContext context, int index) {
                     return MusicPostCard();
                   },
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisSpacing: 16,
-                    mainAxisSpacing: 8,
-                    crossAxisCount: 2,
-                    // NOTE: childAspectRatio = 要素のWidth / 要素のHeight
-                    childAspectRatio: 178 / 286,
-                  ),
-                  itemCount: 30,
+                  childCount: 30,
                 ),
               ),
             ),
