@@ -50,4 +50,4 @@ jobs:
 
       - name: Flutter iOS Build
         run: |
-          fvm flutter build ios --no-codesign
+          fvm flutter build ios --debug --no-codesign
