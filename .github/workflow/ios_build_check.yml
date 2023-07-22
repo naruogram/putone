@@ -1,8 +1,7 @@
 
 name: Build iOS
 
-on:
-  push:
+on: push
 
 jobs:
   run_build:
