@@ -14,7 +14,6 @@ class MusicPostCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 178,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         color: Colors.white,
