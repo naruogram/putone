@@ -36,6 +36,9 @@ jobs:
           cd ios
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
+
+      - name: Pod Repo Update
+        run: cd ios && pod repo update
         
       - name: Setup fvm
         run: |
