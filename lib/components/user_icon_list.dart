@@ -30,7 +30,7 @@ class UserIconList extends StatelessWidget {
         padding: EdgeInsets.symmetric(
           horizontal: 8,
         ),
-        itemCount: 30,
+        itemCount: 10,
       ),
     );
   }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 import 'package:putone/components/music_post_card.dart';
 import 'package:putone/components/user_icon_list.dart';
 import 'package:putone/theme/app_color_theme.dart';
@@ -45,7 +44,7 @@ class HomePage extends StatelessWidget {
                   (BuildContext context, int index) {
                     return MusicPostCard();
                   },
-                  childCount: 30,
+                  childCount: 10,
                 ),
               ),
             ),
