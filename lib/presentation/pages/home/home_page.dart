@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:putone/components/music_post_card.dart';
 import 'package:putone/components/user_icon_list.dart';
+import 'package:putone/mock/mock_story.dart';
 import 'package:putone/presentation/pages/post/post_music_page.dart';
 import 'package:putone/presentation/pages/story/story_mucis_page.dart';
 import 'package:putone/theme/app_color_theme.dart';
@@ -35,13 +36,16 @@ class HomePage extends StatelessWidget {
                       MaterialPageRoute(
                         builder: (context) {
                           return TikTokStyleFullPageScroller(
-                            contentSize: 10,
+                            contentSize: mockMusicList.length,
                             swipePositionThreshold: 0.2,
                             swipeVelocityThreshold: 2000,
                             animationDuration:
                                 const Duration(milliseconds: 200),
                             builder: (BuildContext context, int index) {
-                              return StoryMusicPage(index: index,);
+                              return StoryMusicPage(
+                                index: index,
+                                music: mockMusicList[index],
+                              );
                             },
                           );
                         },
@@ -65,10 +69,13 @@ class HomePage extends StatelessWidget {
                 delegate: SliverChildBuilderDelegate(
                   (BuildContext context, int index) {
                     return MusicPostCard(
+                      music: mockMusicList[index],
                       onPostTap: () => Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) {
-                            return PostMusicPage();
+                            return PostMusicPage(
+                              music: mockMusicList[index],
+                            );
                           },
                         ),
                       ),

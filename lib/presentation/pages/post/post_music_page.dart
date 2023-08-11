@@ -3,19 +3,20 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:putone/components/movie_indicator.dart';
 import 'package:putone/components/user_icon.dart';
+import 'package:putone/model/music.dart';
 import 'package:putone/utill/constant.dart';
 import 'package:blur/blur.dart';
 
 class PostMusicPage extends StatelessWidget {
+  final Music music;
   const PostMusicPage({
     Key? key,
+    required this.music,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    final message =
-        "高校生だった私がたくさん救われた曲。あのときの自分がいたからこそ、今の私がいるんだと思うと泣けてきちゃうな。どうせいつか終わる旅を僕と一緒に歌おう、って大声で叫びたいね！！！";
     return Scaffold(
       body: Stack(
         children: [
@@ -26,7 +27,7 @@ class PostMusicPage extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                    AssetsExt.imagePath('ryoku.png'),
+                    AssetsExt.imagePath(music.imagePath),
                   ),
                   fit: BoxFit.cover,
                 ),
@@ -45,13 +46,13 @@ class PostMusicPage extends StatelessWidget {
                 _UserInfoHeader(),
                 Gap(width * 0.25),
                 Image.asset(
-                  AssetsExt.imagePath('ryoku.png'),
+                  AssetsExt.imagePath(music.imagePath),
                   width: 272,
                   height: 272,
                 ),
                 Gap(24),
                 Text(
-                  "緑黄色社会",
+                  music.artist,
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.white,
@@ -60,7 +61,7 @@ class PostMusicPage extends StatelessWidget {
                 ),
                 Gap(20),
                 Text(
-                  "キャラクター",
+                  music.name,
                   style: TextStyle(
                     fontSize: 18,
                     color: Colors.white,
@@ -69,7 +70,7 @@ class PostMusicPage extends StatelessWidget {
                 ),
                 Gap(20),
                 Text(
-                  message,
+                  "message",
                   style: TextStyle(
                     fontSize: 12,
                     color: Colors.white,
@@ -115,6 +116,19 @@ class _UserInfoHeader extends StatelessWidget {
             fontSize: 14,
             color: Colors.white,
             fontWeight: FontWeight.w600,
+          ),
+        ),
+        Spacer(),
+        GestureDetector(
+          onTap: () => Navigator.pop(context),
+          child: SvgPicture.asset(
+            AssetsExt.svgPath('cross'),
+            height: 20,
+            width: 20,
+            colorFilter: ColorFilter.mode(
+              Colors.white,
+              BlendMode.srcIn,
+            ),
           ),
         ),
       ],

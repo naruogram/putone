@@ -26,7 +26,7 @@ class _MovieIndicatorState extends State<MovieIndicator>
     );
     _animation = Tween<double>(begin: 0, end: 1).animate(_controller)
       ..addListener(() {
-        if (selectedIndex != widget.index) {
+        if (selectedIndex != widget.index && widget.index != null) {
           setState(() {
             selectedIndex = widget.index!;
           });
@@ -60,26 +60,3 @@ class _MovieIndicatorState extends State<MovieIndicator>
     );
   }
 }
-//   EdgeInsets _getIndicatorPadding({
-//     required int index,
-//   }) {
-//     return EdgeInsets.fromLTRB(
-//       (index == 0) ? 0 : (spacing / 2),
-//       0,
-//       (index == values.length - 1) ? 0 : (spacing / 2),
-//       0,
-//     );
-//   }
-
-//   double _getIndicatorWidth({
-//     required int index,
-//     required int length,
-//     required BoxConstraints constraints,
-//   }) {
-//     if (index == 0 || index == length - 1) {
-//       return (constraints.maxWidth / values.length) - (spacing / 2);
-//     }
-
-//     return (constraints.maxWidth / values.length) - (spacing);
-//   }
-// }

@@ -20,7 +20,7 @@ class UserCircleIcon extends StatelessWidget {
       ),
       clipBehavior: Clip.antiAlias,
       child: Image.asset(
-        AssetsExt.imagePath(imagePath),
+        AssetsExt.customImagePath(imagePath),
         fit: BoxFit.cover,
       ),
     );

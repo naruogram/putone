@@ -4,13 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:putone/components/user_icon.dart';
+import 'package:putone/model/music.dart';
 import 'package:putone/utill/constant.dart';
 
 class MusicPostCard extends StatelessWidget {
   final VoidCallback onPostTap;
+  final Music music;
   const MusicPostCard({
     Key? key,
     required this.onPostTap,
+    required this.music,
   }) : super(key: key);
 
   @override
@@ -31,7 +34,7 @@ class MusicPostCard extends StatelessWidget {
           children: [
             _MusicPostCardHeader(),
             _MusicImage(
-              imagePath: AssetsExt.imagePath('ryoku.png'),
+              music: music,
             ),
             _MusicPostCardFooter(),
           ],
@@ -82,11 +85,11 @@ class _MusicPostCardHeader extends StatelessWidget {
 }
 
 class _MusicImage extends StatelessWidget {
-  final String imagePath;
+  final Music music;
 
   const _MusicImage({
     Key? key,
-    required this.imagePath,
+    required this.music,
   }) : super(key: key);
 
   @override
@@ -94,9 +97,10 @@ class _MusicImage extends StatelessWidget {
     return Stack(
       children: [
         Image.asset(
-          imagePath,
+          AssetsExt.imagePath(
+            music.imagePath,
+          ),
         ),
-        // FIXME: 整理する
         Positioned(
           bottom: 8,
           left: 8,
@@ -115,7 +119,7 @@ class _MusicImage extends StatelessWidget {
                     ),
                     Gap(4),
                     Text(
-                      '曲名が入る',
+                      music.name,
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,

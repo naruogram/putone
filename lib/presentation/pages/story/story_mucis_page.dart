@@ -3,14 +3,17 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:putone/components/movie_indicator.dart';
 import 'package:putone/components/user_icon.dart';
+import 'package:putone/model/music.dart';
 import 'package:putone/utill/constant.dart';
 import 'package:blur/blur.dart';
 
 class StoryMusicPage extends StatelessWidget {
   final int index;
+  final Music music;
   const StoryMusicPage({
     Key? key,
     required this.index,
+    required this.music,
   }) : super(key: key);
 
   @override
@@ -27,7 +30,7 @@ class StoryMusicPage extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                    AssetsExt.imagePath('ryoku.png'),
+                    AssetsExt.imagePath(music.imagePath),
                   ),
                   fit: BoxFit.cover,
                 ),
@@ -48,13 +51,13 @@ class StoryMusicPage extends StatelessWidget {
                 _UserInfoHeader(),
                 Gap(width * 0.25),
                 Image.asset(
-                  AssetsExt.imagePath('ryoku.png'),
+                  AssetsExt.imagePath(music.imagePath),
                   width: 272,
                   height: 272,
                 ),
                 Gap(24),
                 Text(
-                  "緑黄色社会",
+                  music.artist,
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.white,
@@ -63,7 +66,7 @@ class StoryMusicPage extends StatelessWidget {
                 ),
                 Gap(20),
                 Text(
-                  "キャラクター",
+                  music.name,
                   style: TextStyle(
                     fontSize: 18,
                     color: Colors.white,
@@ -111,6 +114,19 @@ class _UserInfoHeader extends StatelessWidget {
             fontSize: 12,
             color: Colors.white,
             fontWeight: FontWeight.w600,
+          ),
+        ),
+        Spacer(),
+        GestureDetector(
+          onTap: () => Navigator.pop(context),
+          child: SvgPicture.asset(
+            AssetsExt.svgPath('cross'),
+            height: 20,
+            width: 20,
+            colorFilter: ColorFilter.mode(
+              Colors.white,
+              BlendMode.srcIn,
+            ),
           ),
         ),
       ],
