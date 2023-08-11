@@ -12,9 +12,6 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
 
-  # LocalDatabase
-  shared_preferences:
-
   # Riverpod
   flutter_hooks:
   hooks_riverpod:
@@ -24,30 +21,15 @@ dependencies:
   json_annotation:
   equatable:
 
-  # Launcher
-  url_launcher:
-
   # Image
-  image_picker:
   flutter_svg:
 
   # Permission
   permission_handler:
 
-  # Firebase
-  firebase_core: ^2.14.0
-  firebase_analytics: ^10.4.3
-  cloud_firestore: ^4.8.1
-  firebase_auth: ^4.6.3
-  firebase_remote_config: ^4.2.3
-
-  # Api
-  retrofit:
-  dio:
-
   # Other
-  uuid:
   gap:
+  blur: ^3.1.0
 
 dev_dependencies:
   flutter_test:
@@ -59,11 +41,9 @@ dev_dependencies:
   # Code generator
   build_runner:
   freezed: ^2.3.5
-  retrofit_generator:
 
   # Other
   flutter_launcher_icons:
-  blur: ^3.1.0
 
 flutter:
   assets:

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:putone/components/music_post_card.dart';
 import 'package:putone/components/user_icon_list.dart';
+import 'package:putone/presentation/pages/post/post_music_page.dart';
+import 'package:putone/presentation/pages/story/story_mucis_page.dart';
 import 'package:putone/theme/app_color_theme.dart';
 
 class HomePage extends StatelessWidget {
@@ -25,7 +27,16 @@ class HomePage extends StatelessWidget {
             SliverList(
               delegate: SliverChildListDelegate(
                 [
-                  UserIconList(),
+                  UserIconList(
+                    // FIXME: 遷移の仕方を変更する
+                    onIconTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return StoryMusicPage();
+                        },
+                      ),
+                    ),
+                  ),
                   SizedBox(height: 16),
                 ],
               ),
@@ -42,7 +53,15 @@ class HomePage extends StatelessWidget {
                 ),
                 delegate: SliverChildBuilderDelegate(
                   (BuildContext context, int index) {
-                    return MusicPostCard();
+                    return MusicPostCard(
+                      onPostTap: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return PostMusicPage();
+                          },
+                        ),
+                      ),
+                    );
                   },
                   childCount: 10,
                 ),

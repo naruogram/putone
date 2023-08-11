@@ -6,16 +6,15 @@ import 'package:putone/components/user_icon.dart';
 import 'package:putone/utill/constant.dart';
 import 'package:blur/blur.dart';
 
-class PostMusicPage extends StatelessWidget {
-  const PostMusicPage({
+class StoryMusicPage extends StatelessWidget {
+  const StoryMusicPage({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.sizeOf(context).width;
-    final message =
-        "高校生だった私がたくさん救われた曲。あのときの自分がいたからこそ、今の私がいるんだと思うと泣けてきちゃうな。どうせいつか終わる旅を僕と一緒に歌おう、って大声で叫びたいね！！！";
+
     return Scaffold(
       body: Stack(
         children: [
@@ -67,17 +66,10 @@ class PostMusicPage extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                Gap(20),
-                Text(
-                  message,
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
                 Gap(width * 0.15),
                 _MenuSection(),
+                Gap(width * 0.15),
+                _MessageTextField(),
               ],
             ),
           ),
@@ -110,9 +102,9 @@ class _UserInfoHeader extends StatelessWidget {
         ),
         Gap(12),
         Text(
-          "3時間前",
+          "2時間前 最終視聴",
           style: TextStyle(
-            fontSize: 14,
+            fontSize: 12,
             color: Colors.white,
             fontWeight: FontWeight.w600,
           ),
@@ -137,10 +129,6 @@ class _MenuSection extends StatelessWidget {
         ),
         Gap(16),
         _CircleButton(
-          svgTitle: 'comment',
-        ),
-        Gap(16),
-        _CircleButton(
           svgTitle: 'book_mark',
         ),
         Gap(16),
@@ -161,11 +149,10 @@ class _CircleButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isHeart = svgTitle == 'heart_fill';
     return Container(
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: Colors.white,
+        color: Colors.grey,
       ),
       padding: EdgeInsets.all(8),
       height: 40,
@@ -173,8 +160,42 @@ class _CircleButton extends StatelessWidget {
       child: SvgPicture.asset(
         AssetsExt.svgPath(svgTitle),
         colorFilter: ColorFilter.mode(
-          isHeart ? Colors.red : Colors.black,
+          Colors.white,
           BlendMode.srcIn,
+        ),
+      ),
+    );
+  }
+}
+
+class _MessageTextField extends StatelessWidget {
+  const _MessageTextField({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: 40,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(
+          Radius.circular(30),
+        ),
+        border: Border.all(
+          color: Colors.white,
+        ),
+      ),
+      padding: EdgeInsets.symmetric(
+        vertical: 8,
+        horizontal: 16,
+      ),
+      child: Text(
+        "メッセージを送信",
+        style: TextStyle(
+          fontSize: 14,
+          color: Colors.white,
+          fontWeight: FontWeight.w600,
         ),
       ),
     );

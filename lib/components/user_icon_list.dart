@@ -3,8 +3,11 @@ import 'package:gap/gap.dart';
 import 'package:putone/components/user_icon.dart';
 
 class UserIconList extends StatelessWidget {
+  final VoidCallback onIconTap;
+
   const UserIconList({
     Key? key,
+    required this.onIconTap,
   }) : super(key: key);
 
   @override
@@ -14,14 +17,17 @@ class UserIconList extends StatelessWidget {
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, int index) {
-          return Column(
-            children: [
-              UserCircleIcon(
-                size: 60,
-              ),
-              Gap(4),
-              Text('name'),
-            ],
+          return GestureDetector(
+            onTap: onIconTap,
+            child: Column(
+              children: [
+                UserCircleIcon(
+                  size: 60,
+                ),
+                Gap(4),
+                Text('name'),
+              ],
+            ),
           );
         },
         separatorBuilder: (context, index) {

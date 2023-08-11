@@ -7,30 +7,35 @@ import 'package:putone/components/user_icon.dart';
 import 'package:putone/utill/constant.dart';
 
 class MusicPostCard extends StatelessWidget {
+  final VoidCallback onPostTap;
   const MusicPostCard({
     Key? key,
+    required this.onPostTap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        color: Colors.white,
-        border: Border.all(
-          color: Colors.black,
-          width: 0.2,
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _MusicPostCardHeader(),
-          _MusicImage(
-            imagePath: AssetsExt.imagePath('sample.png'),
+    return GestureDetector(
+      onTap: onPostTap,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          color: Colors.white,
+          border: Border.all(
+            color: Colors.black,
+            width: 0.2,
           ),
-          _MusicPostCardFooter(),
-        ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _MusicPostCardHeader(),
+            _MusicImage(
+              imagePath: AssetsExt.imagePath('ryoku.png'),
+            ),
+            _MusicPostCardFooter(),
+          ],
+        ),
       ),
     );
   }
