@@ -4,17 +4,19 @@ import 'package:gap/gap.dart';
 import 'package:putone/components/movie_indicator.dart';
 import 'package:putone/components/user_icon.dart';
 import 'package:putone/model/music.dart';
+import 'package:putone/model/user.dart';
 import 'package:putone/utill/constant.dart';
 import 'package:blur/blur.dart';
-import 'package:audioplayers/audioplayers.dart';
 
 class StoryMusicPage extends StatefulWidget {
   final int index;
   final Music music;
+  final User user;
   const StoryMusicPage({
     Key? key,
     required this.index,
     required this.music,
+    required this.user,
   }) : super(key: key);
 
   @override
@@ -59,7 +61,9 @@ class _StoryMusicPageState extends State<StoryMusicPage> {
                   index: widget.index,
                 ),
                 Gap(12),
-                _UserInfoHeader(),
+                _UserInfoHeader(
+                  user: widget.user,
+                ),
                 Gap(width * 0.25),
                 Image.asset(
                   AssetsExt.imagePath(widget.music.imagePath),
@@ -98,8 +102,10 @@ class _StoryMusicPageState extends State<StoryMusicPage> {
 }
 
 class _UserInfoHeader extends StatelessWidget {
+  final User user;
   const _UserInfoHeader({
     Key? key,
+    required this.user,
   }) : super(key: key);
 
   @override
@@ -108,10 +114,11 @@ class _UserInfoHeader extends StatelessWidget {
       children: [
         UserCircleIcon(
           size: 38,
+          imagePath: user.imagePath,
         ),
         Gap(12),
         Text(
-          "naruogram",
+          user.name,
           style: TextStyle(
             fontSize: 14,
             color: Colors.white,
@@ -120,7 +127,7 @@ class _UserInfoHeader extends StatelessWidget {
         ),
         Gap(12),
         Text(
-          "2時間前 最終視聴",
+          user.fakeTitle ?? "2時間前 最終視聴",
           style: TextStyle(
             fontSize: 12,
             color: Colors.white,

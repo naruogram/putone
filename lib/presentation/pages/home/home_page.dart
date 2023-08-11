@@ -7,6 +7,7 @@ import 'package:putone/presentation/pages/post/post_music_page.dart';
 import 'package:putone/presentation/pages/story/story_mucis_page.dart';
 import 'package:putone/theme/app_color_theme.dart';
 import 'package:tiktoklikescroller/tiktoklikescroller.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
@@ -19,7 +20,11 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColorTheme.dark().mainColor,
         elevation: 0,
-        title: Text('Putone'),
+        centerTitle: true,
+        title: Text(
+          'Putone',
+          style: GoogleFonts.getFont('Carter One'),
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(
@@ -45,6 +50,7 @@ class HomePage extends StatelessWidget {
                               return StoryMusicPage(
                                 index: index,
                                 music: mockMusicList[index],
+                                user: mockUserList[index],
                               );
                             },
                           );

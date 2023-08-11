@@ -45,7 +45,7 @@ dev_dependencies:
   # Other
   flutter_launcher_icons:
   tiktoklikescroller: ^0.2.5
-  audioplayers: ^5.1.0
+  google_fonts: ^5.1.0
 
 flutter:
   assets:
