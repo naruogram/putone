@@ -13,7 +13,7 @@ class PostMusicPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.sizeOf(context).width;
+    final width = MediaQuery.of(context).size.width;
     final message =
         "高校生だった私がたくさん救われた曲。あのときの自分がいたからこそ、今の私がいるんだと思うと泣けてきちゃうな。どうせいつか終わる旅を僕と一緒に歌おう、って大声で叫びたいね！！！";
     return Scaffold(
@@ -94,7 +94,7 @@ class _UserInfoHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
         UserCircleIcon(
           size: 38,

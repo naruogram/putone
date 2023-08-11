@@ -4,6 +4,7 @@ import 'package:putone/components/user_icon_list.dart';
 import 'package:putone/presentation/pages/post/post_music_page.dart';
 import 'package:putone/presentation/pages/story/story_mucis_page.dart';
 import 'package:putone/theme/app_color_theme.dart';
+import 'package:tiktoklikescroller/tiktoklikescroller.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
@@ -32,7 +33,16 @@ class HomePage extends StatelessWidget {
                     onIconTap: () => Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) {
-                          return StoryMusicPage();
+                          return TikTokStyleFullPageScroller(
+                            contentSize: 10,
+                            swipePositionThreshold: 0.2,
+                            swipeVelocityThreshold: 2000,
+                            animationDuration:
+                                const Duration(milliseconds: 200),
+                            builder: (BuildContext context, int index) {
+                              return StoryMusicPage();
+                            },
+                          );
                         },
                       ),
                     ),

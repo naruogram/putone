@@ -13,7 +13,7 @@ class StoryMusicPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.sizeOf(context).width;
+    final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
       body: Stack(
@@ -39,7 +39,8 @@ class StoryMusicPage extends StatelessWidget {
             ),
             child: Column(
               children: [
-                MovieIndicator(),
+                MovieIndicator(
+                ),
                 Gap(12),
                 _UserInfoHeader(),
                 Gap(width * 0.25),
@@ -86,7 +87,7 @@ class _UserInfoHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
         UserCircleIcon(
           size: 38,

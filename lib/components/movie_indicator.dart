@@ -18,7 +18,7 @@ class _MovieIndicatorState extends State<MovieIndicator>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(seconds: 8),
+      duration: const Duration(seconds: 10),
       vsync: this,
     );
     _animation = Tween<double>(begin: 0, end: 1).animate(_controller)
