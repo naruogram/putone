@@ -12,4 +12,8 @@ extension AssetsExt on String {
   static String svgPath(String name) {
     return 'assets/svgs/$name.svg';
   }
+
+  static String musicPath(String name) {
+    return 'assets/music/$name.MP3';
+  }
 }

@@ -1,4 +1,4 @@
-package com.example.putone
+package com.naruo.putone
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -6,8 +6,9 @@ import 'package:putone/components/user_icon.dart';
 import 'package:putone/model/music.dart';
 import 'package:putone/utill/constant.dart';
 import 'package:blur/blur.dart';
+import 'package:audioplayers/audioplayers.dart';
 
-class StoryMusicPage extends StatelessWidget {
+class StoryMusicPage extends StatefulWidget {
   final int index;
   final Music music;
   const StoryMusicPage({
@@ -15,6 +16,16 @@ class StoryMusicPage extends StatelessWidget {
     required this.index,
     required this.music,
   }) : super(key: key);
+
+  @override
+  State<StoryMusicPage> createState() => _StoryMusicPageState();
+}
+
+class _StoryMusicPageState extends State<StoryMusicPage> {
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +41,7 @@ class StoryMusicPage extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                    AssetsExt.imagePath(music.imagePath),
+                    AssetsExt.imagePath(widget.music.imagePath),
                   ),
                   fit: BoxFit.cover,
                 ),
@@ -45,19 +56,19 @@ class StoryMusicPage extends StatelessWidget {
             child: Column(
               children: [
                 MovieIndicator(
-                  index: index,
+                  index: widget.index,
                 ),
                 Gap(12),
                 _UserInfoHeader(),
                 Gap(width * 0.25),
                 Image.asset(
-                  AssetsExt.imagePath(music.imagePath),
+                  AssetsExt.imagePath(widget.music.imagePath),
                   width: 272,
                   height: 272,
                 ),
                 Gap(24),
                 Text(
-                  music.artist,
+                  widget.music.artist,
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.white,
@@ -66,7 +77,7 @@ class StoryMusicPage extends StatelessWidget {
                 ),
                 Gap(20),
                 Text(
-                  music.name,
+                  widget.music.name,
                   style: TextStyle(
                     fontSize: 18,
                     color: Colors.white,

@@ -45,10 +45,12 @@ dev_dependencies:
   # Other
   flutter_launcher_icons:
   tiktoklikescroller: ^0.2.5
+  audioplayers: ^5.1.0
 
 flutter:
   assets:
     - assets/images/
     - assets/svgs/
+    - assets/music/
 
   uses-material-design: true
