@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:putone/components/user_icon.dart';
+import 'package:putone/mock/mock_data.dart';
 
 class UserIconList extends StatelessWidget {
   final VoidCallback onIconTap;
@@ -17,15 +18,23 @@ class UserIconList extends StatelessWidget {
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, int index) {
+          final user = mockUserList[index];
           return GestureDetector(
             onTap: onIconTap,
             child: Column(
               children: [
                 UserCircleIcon(
                   size: 60,
+                  imagePath: user.imagePath,
                 ),
                 Gap(4),
-                Text('name'),
+                Text(
+                  user.id,
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.black,
+                  ),
+                ),
               ],
             ),
           );
@@ -36,7 +45,7 @@ class UserIconList extends StatelessWidget {
         padding: EdgeInsets.symmetric(
           horizontal: 8,
         ),
-        itemCount: 10,
+        itemCount: mockUserList.length,
       ),
     );
   }

@@ -5,14 +5,17 @@ import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:putone/components/user_icon.dart';
 import 'package:putone/model/music.dart';
+import 'package:putone/model/user.dart';
 import 'package:putone/utill/constant.dart';
 
 class MusicPostCard extends StatelessWidget {
   final VoidCallback onPostTap;
+  final User user;
   final Music music;
   const MusicPostCard({
     Key? key,
     required this.onPostTap,
+    required this.user,
     required this.music,
   }) : super(key: key);
 
@@ -32,7 +35,9 @@ class MusicPostCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _MusicPostCardHeader(),
+            _MusicPostCardHeader(
+              user: user,
+            ),
             _MusicImage(
               music: music,
             ),
@@ -45,8 +50,10 @@ class MusicPostCard extends StatelessWidget {
 }
 
 class _MusicPostCardHeader extends StatelessWidget {
+  final User user;
   const _MusicPostCardHeader({
     Key? key,
+    required this.user,
   }) : super(key: key);
 
   @override
@@ -57,21 +64,23 @@ class _MusicPostCardHeader extends StatelessWidget {
         children: [
           SizedBox(
             height: 36,
-            child: UserCircleIcon(),
+            child: UserCircleIcon(
+              imagePath: user.imagePath,
+            ),
           ),
           Gap(4),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'name',
+                user.name,
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Text(
-                'user_name',
+                user.id,
                 style: TextStyle(
                   fontSize: 12,
                 ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:putone/components/music_post_card.dart';
 import 'package:putone/components/user_icon_list.dart';
-import 'package:putone/mock/mock_story.dart';
+import 'package:putone/mock/mock_data.dart';
 import 'package:putone/presentation/pages/post/post_music_page.dart';
 import 'package:putone/presentation/pages/story/story_mucis_page.dart';
 import 'package:putone/theme/app_color_theme.dart';
@@ -52,7 +52,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Gap(16),
+                  Gap(8),
                 ],
               ),
             ),
@@ -70,6 +70,7 @@ class HomePage extends StatelessWidget {
                   (BuildContext context, int index) {
                     return MusicPostCard(
                       music: mockMusicList[index],
+                      user: mockUserList[index],
                       onPostTap: () => Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) {
@@ -81,10 +82,13 @@ class HomePage extends StatelessWidget {
                       ),
                     );
                   },
-                  childCount: 10,
+                  childCount: mockMusicList.length,
                 ),
               ),
             ),
+            SliverToBoxAdapter(
+              child: Gap(64),
+            )
           ],
         ),
       ),

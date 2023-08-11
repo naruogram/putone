@@ -1,4 +1,5 @@
 import 'package:putone/model/music.dart';
+import 'package:putone/model/user.dart';
 
 List<Music> mockMusicList = [
   Music(
@@ -41,4 +42,17 @@ List<Music> mockMusicList = [
     artist: "キタニタツヤ",
     imagePath: "sample8",
   ),
+];
+
+List<User> mockUserList = [
+  User(name: "なる", id: "naruogram", imagePath: "user_icon_sample.jpg"),
+  User(name: "たつや", id: "tatsuya", imagePath: "user1.png"),
+  User(name: "あゆ", id: "ayugram", imagePath: "user2.png"),
+  User(name: "こうき", id: "kouki_0505", imagePath: "user3.png"),
+  User(name: "ひな", id: "hinaprint", imagePath: "user4.png"),
+  User(name: "しゅん", id: "syunsan", imagePath: "user5.png"),
+  User(name: "ゆうご", id: "yugo0000", imagePath: "user6.png"),
+  User(name: "かずき", id: "kazuki1010", imagePath: "user7.png"),
+  User(name: "はるか", id: "haruka0224", imagePath: "user8.png"),
+  User(name: "りさ", id: "risalisa", imagePath: "user9.png"),
 ];
