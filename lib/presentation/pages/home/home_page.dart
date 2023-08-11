@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:putone/components/music_post_card.dart';
 import 'package:putone/components/user_icon_list.dart';
 import 'package:putone/presentation/pages/post/post_music_page.dart';
@@ -40,14 +41,14 @@ class HomePage extends StatelessWidget {
                             animationDuration:
                                 const Duration(milliseconds: 200),
                             builder: (BuildContext context, int index) {
-                              return StoryMusicPage();
+                              return StoryMusicPage(index: index,);
                             },
                           );
                         },
                       ),
                     ),
                   ),
-                  SizedBox(height: 16),
+                  Gap(16),
                 ],
               ),
             ),

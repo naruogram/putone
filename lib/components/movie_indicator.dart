@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class MovieIndicator extends StatefulWidget {
+  final int? index;
   const MovieIndicator({
     Key? key,
+    this.index,
   }) : super(key: key);
 
   @override
@@ -13,6 +15,7 @@ class _MovieIndicatorState extends State<MovieIndicator>
     with TickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
+  int selectedIndex = 0;
 
   @override
   void initState() {
@@ -23,6 +26,13 @@ class _MovieIndicatorState extends State<MovieIndicator>
     );
     _animation = Tween<double>(begin: 0, end: 1).animate(_controller)
       ..addListener(() {
+        if (selectedIndex != widget.index) {
+          setState(() {
+            selectedIndex = widget.index!;
+          });
+          _controller.reset();
+          _controller.repeat();
+        }
         setState(() {});
       });
     _controller.repeat();

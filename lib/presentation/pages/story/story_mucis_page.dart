@@ -7,8 +7,10 @@ import 'package:putone/utill/constant.dart';
 import 'package:blur/blur.dart';
 
 class StoryMusicPage extends StatelessWidget {
+  final int index;
   const StoryMusicPage({
     Key? key,
+    required this.index,
   }) : super(key: key);
 
   @override
@@ -40,6 +42,7 @@ class StoryMusicPage extends StatelessWidget {
             child: Column(
               children: [
                 MovieIndicator(
+                  index: index,
                 ),
                 Gap(12),
                 _UserInfoHeader(),
