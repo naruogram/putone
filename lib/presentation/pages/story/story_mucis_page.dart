@@ -127,7 +127,7 @@ class _UserInfoHeader extends StatelessWidget {
         ),
         Gap(12),
         Text(
-          user.fakeTitle ?? "2時間前 最終視聴",
+          "${user.fakeIndex}時間前 最終視聴",
           style: TextStyle(
             fontSize: 12,
             color: Colors.white,

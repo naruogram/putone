@@ -41,7 +41,9 @@ class MusicPostCard extends StatelessWidget {
             _MusicImage(
               music: music,
             ),
-            _MusicPostCardFooter(),
+            _MusicPostCardFooter(
+              postTitle: music.descroption,
+            ),
           ],
         ),
       ),
@@ -150,8 +152,10 @@ class _MusicImage extends StatelessWidget {
 }
 
 class _MusicPostCardFooter extends StatelessWidget {
+  final String postTitle;
   const _MusicPostCardFooter({
     Key? key,
+    required this.postTitle,
   }) : super(key: key);
 
   @override
@@ -165,9 +169,10 @@ class _MusicPostCardFooter extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'post_title',
+            postTitle,
             style: TextStyle(
-              fontSize: 16,
+              fontSize: 12,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
           Gap(8),

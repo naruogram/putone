@@ -4,14 +4,17 @@ import 'package:gap/gap.dart';
 import 'package:putone/components/movie_indicator.dart';
 import 'package:putone/components/user_icon.dart';
 import 'package:putone/model/music.dart';
+import 'package:putone/model/user.dart';
 import 'package:putone/utill/constant.dart';
 import 'package:blur/blur.dart';
 
 class PostMusicPage extends StatelessWidget {
   final Music music;
+  final User user;
   const PostMusicPage({
     Key? key,
     required this.music,
+    required this.user,
   }) : super(key: key);
 
   @override
@@ -43,7 +46,9 @@ class PostMusicPage extends StatelessWidget {
               children: [
                 MovieIndicator(),
                 Gap(12),
-                _UserInfoHeader(),
+                _UserInfoHeader(
+                  user: user,
+                ),
                 Gap(width * 0.25),
                 Image.asset(
                   AssetsExt.imagePath(music.imagePath),
@@ -89,8 +94,10 @@ class PostMusicPage extends StatelessWidget {
 }
 
 class _UserInfoHeader extends StatelessWidget {
+  final User user;
   const _UserInfoHeader({
     Key? key,
+    required this.user,
   }) : super(key: key);
 
   @override
@@ -99,10 +106,11 @@ class _UserInfoHeader extends StatelessWidget {
       children: [
         UserCircleIcon(
           size: 38,
+          imagePath: user.imagePath,
         ),
         Gap(12),
         Text(
-          "naruogram",
+          user.id,
           style: TextStyle(
             fontSize: 14,
             color: Colors.white,
@@ -111,7 +119,7 @@ class _UserInfoHeader extends StatelessWidget {
         ),
         Gap(12),
         Text(
-          "3時間前",
+          "${user.fakeIndex}時間前",
           style: TextStyle(
             fontSize: 14,
             color: Colors.white,

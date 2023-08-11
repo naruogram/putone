@@ -82,6 +82,7 @@ class HomePage extends StatelessWidget {
                           builder: (context) {
                             return PostMusicPage(
                               music: mockMusicList[index],
+                              user: mockUserList[index],
                             );
                           },
                         ),
@@ -97,6 +98,22 @@ class HomePage extends StatelessWidget {
             )
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: AppColorTheme.dark().mainColor,
+        fixedColor: Colors.white,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        currentIndex: 1,
+        iconSize: 30,
+        onTap: (value) {},
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
+          BottomNavigationBarItem(icon: Icon(Icons.people), label: ""),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.supervised_user_circle_rounded), label: ""),
+        ],
+        type: BottomNavigationBarType.fixed,
       ),
     );
   }
