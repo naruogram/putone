@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:putone/components/user_icon_list.dart';
-import 'package:putone/presentation/pages/main/community/community_body.dart';
-import 'package:putone/presentation/pages/main/home/home_body.dart';
+import 'package:putone/presentation/pages/main/community/community_screen.dart';
+import 'package:putone/presentation/pages/main/home/home_screen.dart';
 import 'package:putone/theme/app_color_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -15,8 +15,8 @@ class Tabs extends StatefulWidget {
 class _TabsState extends State<Tabs> {
   int _currentIndex = 0;
   late List _currentContent = [
-    HomeBody(),
-    CommunityBody(),
+    HomeScreen(),
+    CommunityScreen(),
   ];
   late List _appBarList;
 
@@ -90,7 +90,7 @@ class _TabsState extends State<Tabs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _appBarList[_currentIndex], //_currentIndexによって表示するAppBarを変更する
+      //appBar: _appBarList[_currentIndex], //_currentIndexによって表示するAppBarを変更する
       body: _currentContent[_currentIndex], //_currentIndexによって表示するBodyを変更する
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: AppColorTheme.dark().mainColor,
