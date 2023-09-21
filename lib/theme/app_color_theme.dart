@@ -20,10 +20,10 @@ class AppColorTheme {
 
   factory AppColorTheme.dark() => AppColorTheme(
         mainColor: Color(0xffffb700),
-        accentColor: Color(0x27A2BB),
-        gray100: Color(0x404040),
-        gray200: Color(0x616161),
-        gray300: Color(0xD9D9D9),
-        gray400: Color(0xF0F0F0),
+        accentColor: Color.fromARGB(255, 39, 162, 187),
+        gray100: Color.fromARGB(255, 64, 64, 64),
+        gray200: Color.fromARGB(255, 97, 97, 97),
+        gray300: Color.fromARGB(255, 217, 217, 217),
+        gray400: Color.fromARGB(255, 240, 240, 240),
       );
 }

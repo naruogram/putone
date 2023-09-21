@@ -42,7 +42,7 @@ class MusicPostCard extends StatelessWidget {
               music: music,
             ),
             _MusicPostCardFooter(
-              postTitle: music.descroption,
+              postTitle: music.description,
             ),
           ],
         ),

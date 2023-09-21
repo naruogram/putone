@@ -3,7 +3,6 @@ import 'package:putone/components/user_icon_list.dart';
 import 'package:putone/presentation/pages/main/community/community_screen.dart';
 import 'package:putone/presentation/pages/main/home/home_screen.dart';
 import 'package:putone/theme/app_color_theme.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class Tabs extends StatefulWidget {
   @override

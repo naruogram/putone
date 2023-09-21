@@ -3,7 +3,7 @@ publish_to: none
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.19.4 <3.0.0'
+  sdk: ">=2.19.4 <3.0.0"
 
 dependencies:
   flutter:
@@ -51,6 +51,5 @@ flutter:
   assets:
     - assets/images/
     - assets/svgs/
-    - assets/music/
 
   uses-material-design: true

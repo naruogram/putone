@@ -8,6 +8,6 @@ class User {
     required this.name,
     required this.id,
     required this.imagePath,
-   required this.fakeIndex,
+    required this.fakeIndex,
   });
 }
