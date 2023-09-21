@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-import 'presentation/pages/home/home_page.dart';
+import 'package:putone/presentation/pages/main/tabs.dart';
+import 'package:putone/theme/app_color_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +18,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const HomePage(),
+      theme: ThemeData().copyWith(
+        colorScheme: ThemeData().colorScheme.copyWith(
+              primary: AppColorTheme.dark().mainColor,
+            ),
+      ),
+      home: Tabs(),
     );
   }
 }

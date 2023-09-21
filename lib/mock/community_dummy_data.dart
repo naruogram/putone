@@ -1,7 +1,7 @@
 import 'package:putone/model/music.dart';
 import 'package:putone/model/user.dart';
 
-List<Music> mockMusicList = [
+List<Music> communityDummyMusicList = [
   Music(
     name: "水平線",
     artist: "back number",
@@ -52,7 +52,7 @@ List<Music> mockMusicList = [
   ),
 ];
 
-List<User> mockUserList = [
+List<User> communityDummyUserList = [
   User(
     name: "なる",
     id: "naruogram",
@@ -101,16 +101,64 @@ List<User> mockUserList = [
     imagePath: "user7.png",
     fakeIndex: 4,
   ),
-  User(
-    name: "はるか",
-    id: "haruka0224",
-    imagePath: "user8.png",
-    fakeIndex: 3,
-  ),
-  User(
-    name: "りさ",
-    id: "risalisa",
-    imagePath: "user9.png",
-    fakeIndex: 2,
-  ),
+];
+
+List<List<String>> commynityDummyArtistList = [
+  [
+    'Saucy dog',
+    'クリープハイプ',
+    'マカロニえんぴつ',
+    '乃木坂46',
+  ],
+  [
+    'AI',
+    'MISIA',
+    '宇多田ヒカル',
+    '安室奈美恵',
+    'aiko',
+    '...',
+  ],
+  [
+    '椎名林檎',
+    '東京事変',
+    'milet',
+    'Aimer',
+    '藤井風',
+    'miwa',
+    '...',
+  ],
+  [
+    'Ado',
+    'Anly',
+    'ONE OK ROCK',
+    '緑黄色社会',
+    'Superfly',
+  ],
+  [
+    'Ado',
+    'YOASOBI',
+    '緑黄色社会',
+    'ONE OK ROCK',
+    'yama',
+    '...',
+  ],
+  [
+    'BUMP OF CHICKEN',
+    'スピッツ',
+    'コブクロ',
+    'Mr.Children',
+  ],
+  [
+    '百足&韻マン',
+    'LEX',
+    'Tohji',
+    'LANA',
+  ],
+  [
+    'ao',
+    'milet',
+    'Aimer',
+    'imase',
+    'YOASOBI',
+  ],
 ];
