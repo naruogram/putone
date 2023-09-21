@@ -159,5 +159,6 @@ List<List<String>> commynityDummyArtistList = [
     'milet',
     'Aimer',
     'imase',
+    'YOASOBI',
   ],
 ];

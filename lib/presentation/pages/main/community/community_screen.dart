@@ -129,7 +129,60 @@ class _CommunityScreenState extends State<CommunityScreen> {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          return Container(
+                            height: 200,
+                            decoration: BoxDecoration(color: Colors.white),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 12, vertical: 16),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('所属中のコミュニティ'),
+                                  SizedBox(height: 8),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text('東京理科大学'),
+                                      Icon(
+                                        Icons.check,
+                                        color: AppColorTheme.dark().mainColor,
+                                        size: 24,
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 8),
+                                  Text('東京理科大学 経営学部'),
+                                  SizedBox(height: 8),
+                                  Text('理科大 バドミントンサークル'),
+                                  SizedBox(height: 16),
+                                  Divider(
+                                    color: AppColorTheme.dark().gray300,
+                                    height: 0.2,
+                                  ),
+                                  SizedBox(height: 16),
+                                  InkWell(
+                                    onTap: () {},
+                                    child: Row(
+                                      children: [
+                                        Icon(Icons.add_circle_outline_outlined),
+                                        SizedBox(width: 16),
+                                        Text('コミュニティを追加'),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                      );
+                    },
                     icon: Icon(
                       Icons.keyboard_arrow_down_outlined,
                       size: 32,
@@ -146,11 +199,6 @@ class _CommunityScreenState extends State<CommunityScreen> {
                 ],
               ),
               Expanded(child: CommunityUserList()),
-              // UserCard(
-              //   user: communityDummyUserList[0],
-              //   music: communityDummyMusicList[0],
-              //   artists: commynityDummyArtistList[0],
-              // ),
             ],
           ),
         ))
